@@ -86,6 +86,7 @@ stages:
       runOnce:
         deploy:
           steps:
+          - script: echo '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
           - download: current
             artifact: drop
           - task: AzureWebApp@1
